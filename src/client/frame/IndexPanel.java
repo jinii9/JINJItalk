@@ -292,49 +292,46 @@ public class IndexPanel extends CommonPanel {
 	add(btn);
 
 	// =========================  친구 검색 버튼 클릭 ================================= //
-	btn.addActionListener(new ActionListener() {
+   btn.addActionListener(new ActionListener() {
 
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			UserDAO search = new UserDAO();
-			
-			text = textField.getText(); // 친구 검색창에 입력된 별명 읽는 변수
-			String result[] = search.searchUser(text,controller.username); // searchUser에서 text와 일치하는 값을 찾아 정보를 array로 받아온다
-			
-			JFrame frame = new JFrame("검색 결과 ( 상세정보 )");
-			Container c = frame.getContentPane();
-			
-			c.setBackground(new Color(255,255,204));
-			
-			JButton btn2 = new JButton (" 친구 추가하기 "); // 친구추가 버튼
-			btn2.setBackground(new Color(255,255,153));
-			
-			/* 얻어온 친구 정보 출력 */
-			JLabel label1 = new JLabel("오늘의 한마디 : " + result[0]); JLabel label2 = new JLabel("이름 : " + result[1]);
-			JLabel label3 = new JLabel("ID : " + result[2]); JLabel label4 = new JLabel("별칭 : " + result[3]);
-			JLabel label5 = new JLabel("이메일 : " + result[4]); JLabel label6 = new JLabel("생년월일 : " + result[5]);
-			JLabel label7 = new JLabel("접속시간 :");
-	  
-			label1.setFont(new Font("맑은 고딕", Font.BOLD,14)); label2.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
-			label3.setFont(new Font("맑은 고딕", Font.BOLD,14)); label4.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
-  		  	label5.setFont(new Font("맑은 고딕", Font.BOLD,14)); label6.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
-  		  	label7.setFont(new Font("맑은 고딕", Font.BOLD,14));
-  		  	btn2.setFont(new Font("맑은 고딕", Font.BOLD,13));
-  		  	
-			label1.setHorizontalAlignment(SwingConstants.LEFT); label2.setHorizontalAlignment(SwingConstants.LEFT);
-			label3.setHorizontalAlignment(SwingConstants.LEFT); label4.setHorizontalAlignment(SwingConstants.LEFT);
-			label5.setHorizontalAlignment(SwingConstants.LEFT); label6.setHorizontalAlignment(SwingConstants.LEFT);
-			label7.setHorizontalAlignment(SwingConstants.LEFT);
-	  
-			c.setLayout(new GridLayout(8,1));
-			c.add(label1); c.add(label2); c.add(label3); c.add(label4); 
-			c.add(label5); c.add(label6); c.add(label7);
-			c.add(btn2);
-	  
-			frame.setLocation(500, 400);
-			frame.setPreferredSize(new Dimension(400, 340));
-			frame.pack();
-			frame.setVisible(true);
+      @Override
+      public void actionPerformed(ActionEvent arg0) {
+         UserDAO search = new UserDAO();
+         
+         text = textField.getText(); // 친구 검색창에 입력된 별명 읽는 변수
+         String result[] = search.searchUser(text,controller.username); // searchUser에서 text와 일치하는 값을 찾아 정보를 array로 받아온다
+         
+         JFrame frame = new JFrame("검색 결과 ( 상세정보 )");
+         Container c = frame.getContentPane();
+         
+         c.setBackground(new Color(255,255,204));
+         
+         JButton btn2 = new JButton (" 친구 추가하기 "); // 친구추가 버튼
+         btn2.setBackground(new Color(255,255,153));
+         
+         /* 얻어온 친구 정보 출력 */
+         JLabel label1 = new JLabel("오늘의 한마디 : " + result[0]); JLabel label2 = new JLabel("이름 : " + result[1]);
+         JLabel label3 = new JLabel("ID : " + result[2]); JLabel label4 = new JLabel("별칭 : " + result[3]);
+         JLabel label5 = new JLabel("이메일 : " + result[4]); JLabel label6 = new JLabel("생년월일 : " + result[5]);
+     
+         label1.setFont(new Font("맑은 고딕", Font.BOLD,14)); label2.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
+         label3.setFont(new Font("맑은 고딕", Font.BOLD,14)); label4.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
+             label5.setFont(new Font("맑은 고딕", Font.BOLD,14)); label6.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
+             btn2.setFont(new Font("맑은 고딕", Font.BOLD,13));
+             
+         label1.setHorizontalAlignment(SwingConstants.LEFT); label2.setHorizontalAlignment(SwingConstants.LEFT);
+         label3.setHorizontalAlignment(SwingConstants.LEFT); label4.setHorizontalAlignment(SwingConstants.LEFT);
+         label5.setHorizontalAlignment(SwingConstants.LEFT); label6.setHorizontalAlignment(SwingConstants.LEFT);
+     
+         c.setLayout(new GridLayout(7,1));
+         c.add(label1); c.add(label2); c.add(label3); c.add(label4); 
+         c.add(label5); c.add(label6); c.add(btn2);
+     
+         frame.setLocation(500, 400);
+         frame.setPreferredSize(new Dimension(400, 340));
+         frame.pack();
+         frame.setVisible(true);
+         
 			
 		// =============================== 친구 추가 버튼 클릭 ================================= //
 			btn2.addActionListener(new ActionListener() {
