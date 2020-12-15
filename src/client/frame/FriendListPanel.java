@@ -82,42 +82,38 @@ public class FriendListPanel extends JPanel {
     		 int idx = (Integer) ((JButton) e.getSource()).getClientProperty("page");
 
     		 //---------------- 화면 (창) ----------------//
-    		 
-    		  JFrame frame=new JFrame("정보");
-    		  Container c = frame.getContentPane();
-    		  
-    		  c.setBackground(new Color(255,255,204));
-    		  JLabel label1 = new JLabel("오늘의 한마디 : " + todays.get(idx)); JLabel label2 = new JLabel("이름 : " + friends.get(idx));
-    		  JLabel label3 = new JLabel("ID : " + ids.get(idx)); JLabel label4 = new JLabel("별칭 : " + nicknames.get(idx));
-    		  JLabel label5 = new JLabel("이메일 : " + emails.get(idx)); JLabel label6 = new JLabel("생년월일 : " + births.get(idx));
-    		  JLabel label7 = new JLabel("접속시간 :");
-    		  
-    		  JButton btn = new JButton (" 일대일 채팅하기 ");
-    		  
-    		  label1.setFont(new Font("맑은 고딕", Font.BOLD,14)); label2.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
-    		  label3.setFont(new Font("맑은 고딕", Font.BOLD,14)); label4.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
-    		  label5.setFont(new Font("맑은 고딕", Font.BOLD,14)); label6.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
-    		  label7.setFont(new Font("맑은 고딕", Font.BOLD,14));
-    		  btn.setFont(new Font("맑은 고딕", Font.BOLD,13));
-    		  
-    		  btn.setBackground(new Color(255,255,153));
-    		  
-    		  label1.setHorizontalAlignment(SwingConstants.LEFT); label2.setHorizontalAlignment(SwingConstants.LEFT);
-    		  label3.setHorizontalAlignment(SwingConstants.LEFT); label4.setHorizontalAlignment(SwingConstants.LEFT);
-    		  label5.setHorizontalAlignment(SwingConstants.LEFT); label6.setHorizontalAlignment(SwingConstants.LEFT);
-    		  label7.setHorizontalAlignment(SwingConstants.LEFT);
-    		  
-    		  c.setLayout(new GridLayout(8,1));
-    		  c.add(label1); c.add(label2); c.add(label3); c.add(label4); 
-    		  c.add(label5); c.add(label6); c.add(label7);
-    		  c.add(btn);
-    		  
-    		  frame.setLocation(500, 400);
-    		  frame.setPreferredSize(new Dimension(400, 340));
-    		  frame.pack();
-    		  frame.setVisible(true);
-    		  
-    		  //---------------- 화면 (끝) ----------------//
+             
+             JFrame frame=new JFrame("정보");
+             Container c = frame.getContentPane();
+             
+             c.setBackground(new Color(255,255,204));
+             JLabel label1 = new JLabel("오늘의 한마디 : " + todays.get(idx)); JLabel label2 = new JLabel("이름 : " + friends.get(idx));
+             JLabel label3 = new JLabel("ID : " + ids.get(idx)); JLabel label4 = new JLabel("별칭 : " + nicknames.get(idx));
+             JLabel label5 = new JLabel("이메일 : " + emails.get(idx)); JLabel label6 = new JLabel("생년월일 : " + births.get(idx));
+             
+             JButton btn = new JButton (" 일대일 채팅하기 ");
+             
+             label1.setFont(new Font("맑은 고딕", Font.BOLD,14)); label2.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
+             label3.setFont(new Font("맑은 고딕", Font.BOLD,14)); label4.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
+             label5.setFont(new Font("맑은 고딕", Font.BOLD,14)); label6.setFont(new Font("맑은 고딕", Font.BOLD,14)); 
+             btn.setFont(new Font("맑은 고딕", Font.BOLD,13));
+             
+             btn.setBackground(new Color(255,255,153));
+             
+             label1.setHorizontalAlignment(SwingConstants.LEFT); label2.setHorizontalAlignment(SwingConstants.LEFT);
+             label3.setHorizontalAlignment(SwingConstants.LEFT); label4.setHorizontalAlignment(SwingConstants.LEFT);
+             label5.setHorizontalAlignment(SwingConstants.LEFT); label6.setHorizontalAlignment(SwingConstants.LEFT);
+             
+             c.setLayout(new GridLayout(7,1));
+             c.add(label1); c.add(label2); c.add(label3); c.add(label4); 
+             c.add(label5); c.add(label6); c.add(btn);
+             
+             frame.setLocation(500, 400);
+             frame.setPreferredSize(new Dimension(400, 340));
+             frame.pack();
+             frame.setVisible(true);
+             
+             //---------------- 화면 (끝) ----------------//
     		
     	// ===================== 일대일채팅 버튼 ===================== //
     		  btn.addActionListener(new ActionListener() {
