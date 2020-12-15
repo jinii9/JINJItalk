@@ -55,7 +55,7 @@ public class ErrorMessagePanel extends CommonPanel {
     backButton.setOpaque(true);
     backButton.setBorderPainted(false);
     backButton.setBounds(100, 480, 180, 40);
-    add(backButton);
+    //add(backButton);
     return backButton;
   };
 }
